@@ -5,19 +5,14 @@ using UnityEngine;
 public class SP_Bullet : MonoBehaviour
 {
     public float speed;
-    public float timer;
 
     private void Start()
     {
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 10f);   //Bullet self destructs after 10 seconds to avoid buildup of bullets
     }
 
     void Update()
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
-        if (timer > 0f)
-        {
-            timer -= Time.deltaTime;
-        }
+        transform.position += transform.forward * speed * Time.deltaTime;   //bullet constatnly moves forward
     }
 }
